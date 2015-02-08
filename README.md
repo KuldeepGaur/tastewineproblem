@@ -18,8 +18,8 @@ Algorithm becomes complex because for each M friend and each N wines the runtime
 data set.
 Hence the solution is to assign the wines based on the Hash(wineID)%(numberofwines) and the hashcode will be unique.
 Create a bit buffer and set the boolean to true for each wine taken. Any other friend wanting to take same wine will
-hash to same bit value and check if its already set then its already taken hence skip and move on. 
-This approach will take O(M) which is quite optimized.
+hash to same bit value and check if its already set then its already taken hence skip and move on upto max 3 per friend. 
+This approach will take O(n) which is quite optimized.
 
 ## Prerequisites
 * MongoDB 2.6.7 server should be installed and running on 27017 port.
