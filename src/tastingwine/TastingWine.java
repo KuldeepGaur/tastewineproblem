@@ -12,11 +12,11 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 
 public class TastingWine {
-	static final String problemFilename = "res/person_wine_3.txt"; /* Path to problem file */
+	static final String inputFilename = "res/person_wine_3.txt"; /* Path to question input file */
 	static final String resultFilename = "res/result3.txt"; /* Path to result file */
 	
 	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new FileReader(problemFilename));
+		BufferedReader br = new BufferedReader(new FileReader(inputFilename));
 		System.out.println("Going to open mongoDB Connection....");
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
 		DB db = mongoClient.getDB("mydb2");
@@ -70,10 +70,9 @@ public class TastingWine {
 			}
 			FileWriter fw = new FileWriter(file,true);
 			BufferedWriter bw = new BufferedWriter(fw);
-			//Writer writer = new BufferedWriter(new FileWriter(new File(resultFilename)));
-			bw.write("                                                       \n"); // reserved for the result
+			bw.write("                                                       \n"); // output the result
 		
-			BitSet wineTracker = new BitSet(maxWid + 1); // for tracking the bottles
+			BitSet wineTracker = new BitSet(maxWid + 1); // for tracking the unique wine bottles
 			
 			while(cursor.hasNext()) {
 				int pid = Integer.parseInt((String) cursor.next().get("personID")); // friend id
