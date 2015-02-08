@@ -19,7 +19,7 @@ public class TastingWine {
 		BufferedReader br = new BufferedReader(new FileReader(inputFilename));
 		System.out.println("Going to open mongoDB Connection....");
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
-		DB db = mongoClient.getDB("mydb2");
+		DB db = mongoClient.getDB("myMongoDB");
 		DBCollection wishlistcollection = db.getCollection("wishlist");
 		System.out.println("Done setting up MongoDB. Loading the data...");
 		/* Reading the input */
