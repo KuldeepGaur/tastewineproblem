@@ -17,13 +17,13 @@ to the friends who have listed it as their choice.
 Algorithm becomes complex because for each M friend and each N wines the runtime will be O(M*N) which is huge for the
 data set.
 Hence the solution is to assign the wines based on the Hash(wineID)%(numberofwines) and the hashcode will be unique.
-Create a bit buffer and set the boolean for the wine taken for that bit. Any other friend wanting to take same wine will
-hash to same bit value and check if its already set then its taken. 
+Create a bit buffer and set the boolean to true for each wine taken. Any other friend wanting to take same wine will
+hash to same bit value and check if its already set then its already taken hence skip and move on. 
 This approach will take O(M) which is quite optimized.
 
 ## Prerequisites
 * MongoDB 2.6.7 server should be installed and running on 27017 port.
 * MongoTest client should be helpful in testing the connection.
-* Import the project in eclipse and TastingWine.java. This will create result3.txt file with output.
+* Import the project in eclipse and run TastingWine.java. This will create result3.txt file with output in ~/res/.
 * The first input file "person_wine_3.txt" is attached with the code.
-one of the bit in the bit buffer
+
