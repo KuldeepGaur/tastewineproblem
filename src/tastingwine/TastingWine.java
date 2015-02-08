@@ -21,7 +21,7 @@ public class TastingWine {
 		MongoClient mongoClient = new MongoClient("localhost", 27017);
 		DB db = mongoClient.getDB("mydb2");
 		DBCollection wishlistcollection = db.getCollection("wishlist");
-		System.out.println("Done setting up an in-memory database. Loading the data...");
+		System.out.println("Done setting up MongoDB. Loading the data...");
 		/* Reading the input */
 		String line;
 		
